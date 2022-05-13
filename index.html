@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <title>WEATHERAPP</title>
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" class="search-bar" placeholder="City" autocomplete="off">
+            <button class="search-btn">Search</button>
+        </div>
+        <div class="card">
+            <div class="weather">
+                <div class="head">
+                <img src="./Image/fog.svg" alt="" class="icon">
+                <div class="city-time">
+                    <span class="city-name">
+                        City , Country
+                    </span>
+                    <span class="date-time">
+                        date
+                    </span>
+                </div>
+                </div>
+                <div class="temperature">
+                    <span class="temp-celsius">
+                        <span class="big-celsius">N/A</span>°C
+                    </span>
+                    <span class="weather__description">
+                        description
+                    </span>
+                </div>
+                <div class="cont" id="first">
+                    <div class="visibility">
+                        <img src="./Image/second.svg" alt="" class="iconz">
+                        <span class="visibility-inf eye">Visibility: NA km</span>
+                    </div>
+                    <hr>
+                    <div class="visibility humid">
+                        <img src="./Image/temperature.svg" alt="" class="iconz">
+                        <span class="visibility-inf feels-like">Feels like: NA°C</span>
+                    </div>
+                </div>
+                <div class="cont" id="first">
+                    <div class="visibility">
+                        <img src="./Image/visibility.svg" alt="" class="iconz">
+                        <span class="visibility-inf humidity">Humidity: NA%</span>
+                    </div>
+                    <hr>
+                    <div class="visibility">
+                        <img src="./Image/windy.svg" alt="" class="iconz">
+                        <span class="visibility-inf wind">Wind:NA km/h</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js" defer></script>
+</body>
+</html>

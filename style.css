@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+*{
+    margin:0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #252831;
+}
+
+
+.search-bar {
+    outline:white;
+    border:none;
+    border-radius:25px;
+    padding:10px;
+    background:white;
+    color:#252831;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap:20px;
+}
+
+.search-bar:focus {
+    border:solid 1px white;
+}
+
+.search-bar:focus {
+    outline:none !important;
+    border:solid 1px rgb(255, 255, 255);
+}
+
+.head {
+    display:flex;
+    justify-content: center;
+    gap:50px;
+    padding-top:50px;
+}
+
+.icon {
+    width:80px;
+    height:80px;
+}
+
+.city-time {
+    display:flex;
+    flex-direction:column;
+}
+
+.city-name,.date-time {
+    font-family: 'Poppins';
+    font-style: normal;
+    width:auto;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 36px;
+    color: #FFFFFF;
+}
+
+.search-btn {
+    background-color:white;
+    border:none;
+    border-radius:5px;
+    color:#252831;
+    cursor: pointer;
+    border-radius:25px;
+    font-weight:500;
+}
+
+.search-btn:hover {
+    background-color:rgb(1, 65, 1);
+}
+
+.temp-celsius {
+    color:black;
+    font-size:20px;
+    font-weight: 500;
+}
+
+.temperature{
+    margin-top:10px;
+}
+
+.card {
+    width:700px;
+    height:575px;
+    background-color:#252831;
+    border-radius: 48px;
+}
+
+.temperature {
+    align-items:center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.big-celsius {
+    font-size:64px;
+}
+
+.temp-celsius{
+    display: flex;
+    color:white;
+}
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
+
+.weather__description {
+    width:auto;
+    color:white;
+    font-weight:500;
+}
+
+.cont {
+    display:flex;
+    align-items:center;
+}
+
+hr{
+    height:10px;
+    color:white;
+}
+
+
+
+.visibility {
+    display: flex;
+    align-items: center;
+    gap:10px;
+    width:160px;
+}
+
+.visibility-inf{
+    color:white;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    gap:40px;
+}
