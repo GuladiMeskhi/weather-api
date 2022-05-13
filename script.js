@@ -1,29 +1,31 @@
-
 let n = new Date();
 let year = n.getFullYear();
 let month = n.getMonth();
 let day = n.getDate();
-
+// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 let weather = {
-    apiKey: "316228c5f27c9ac52b2f11b7c81f5e09",
+    apiKey: "a9fa4983f61fe815e73e8d6d7ece4b32",
     fetchWeather:function(city){
-        fetch("http://api.weatherstack.com/current?access_key="+ this.apiKey +"&query=" + city +"&unit=metric")
+        fetch("https://api.openweathermap.org/data/2.5/weather?q="+ city + "&appid" + this.apiKey)
         .then((response)=> response.json())
         .then((data) => this.displayWeather(data))
     },
     displayWeather: function(data) {
-        const { name,country } = data.location;
-        const { weather_descriptions,temperature,weather_icons, is_day,humidity,visibility,feelslike,wind_speed} = data.current;
+        const { name,visibility } = data;
+        const { country } = data.sys;
+        const { feels_like,humidity,temp } = data.main;
+        const { description } = data.weather[0];
+        const { speed } = data.wind;
         console.log(name,temperature,weather_descriptions);
         document.querySelector(".city-name").innerText = name + ", " + country;
         document.querySelector(".date-time").innerText = day + "/" + month +"/" + year;
-        document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%"
-        document.querySelector(".eye").innerText = "Visibility: " + visibility + "km" 
-        document.querySelector(".feels-like").innerText = "Feels like: " + feelslike + "°C"
-        document.querySelector(".wind").innerText = "Wind: " + wind_speed + "km/h"
-        document.querySelector(".big-celsius").innerText = temperature
-        document.querySelector(".weather__description").innerText = weather_descriptions[0];
-        updateImg(weather_descriptions,is_day);
+        document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
+        document.querySelector(".eye").innerText = "Visibility: " + visibility + "km" ;
+        document.querySelector(".feels-like").innerText = "Feels like: " + feels_like + "°C";
+        document.querySelector(".wind").innerText = "Wind: " + speed + "km/h";
+        document.querySelector(".big-celsius").innerText = temp;
+        document.querySelector(".weather__description").innerText = description;
+        updateImg(weather_descriptions,is_day,country);
         console.log(is_day)
     },
     search: function (){
@@ -43,7 +45,7 @@ document.querySelector(".search-bar").addEventListener("keyup", function(event){
 
 const weatherIcon = document.querySelector(".icon");
 
-function updateImg(description,isDay){
+function updateImg(description,isDay,x,y){
     if(description == "Clear" && isDay == "no"){
         weatherIcon.src = "./Image/night-clear.svg"
     }else if(description == "Clear" && isDay == "yes"){
