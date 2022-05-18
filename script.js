@@ -7,7 +7,13 @@ let weather = {
     // api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=3861861316ef407f1ab0c6abab37a421
     fetchWeather:function(city){
         fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + this.apiKey + "&units=metric")
-        .then((response)=> response.json())
+        .then((response)=>{
+            if(!response.ok){
+                alert("not found")
+            }
+            return response.json();
+        })
+
         .then((data) => this.displayWeather(data))
     },
     displayWeather: function(data) {
